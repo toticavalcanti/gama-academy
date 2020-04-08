@@ -57,7 +57,7 @@ a {
 }
 
 .produtoDestaque {
-    border: gray 1px solid;
+    border: gray 1px;
     margin-left: 10px;
     margin-right: 10px;
     box-shadow: gray 2px 2px 3px;
@@ -65,7 +65,8 @@ a {
 
 .imgDestaque {
     width: 50%;
-    margin-left: 20%;
+    margin-top: 40px;
+    margin-left: 25%;
     margin-bottom: 10px;
 }
 
