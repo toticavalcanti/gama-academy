@@ -18,9 +18,14 @@ h6 {
     background-color: white;
 }
 
+
+.container {
+    background-color: white;
+}
+
 #logo {
     width: 100%;
-    padding-left: 8px;
+    padding-left: 4px;
 }
 
 #logoImg {
