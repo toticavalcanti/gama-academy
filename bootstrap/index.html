@@ -55,7 +55,11 @@
                         <h5 class="card-title">$10.00</h5>
                         <h6 class="card-subtitle mb-2 text-muted">Produto 1</h6>
                         <div class="card-body">
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <p class="card-text">Some quick example text to build on the card 
+                              title and make up the bulk of the card's content.</p>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                Quero!
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -95,12 +99,37 @@
                         <div class="form-group">
                             <label for="exampleInputEmail1">Digite seu email</label>
                             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                            <small id="emailHelp" class="form-text text-muted">Garantimos sua privacidade</small>
+                            <small id="emailHelp" class="form-text text-muted">*Garantimos sua privacidade</small>
                           </div>
                           <button type="submit" class="btn btn-primary">Enviar</button>
                     </form>
                 </div>
             </div>
+
+            <!-- Modal do produto 1-->
+
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Produto 1</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <h3>Produto 1</h3>
+                      <p>Descrição: blá blá blá...</p>
+                      <p>Preço: R$100,00 em até 3 vezes sem juros.</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            <!-- Fim do modal do produto 1-->
         </div>
 
         <script 
