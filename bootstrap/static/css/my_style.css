@@ -5,6 +5,15 @@ body{
 h3 {
     text-align: center;
 }
+
+h5 {
+    text-align: center;
+}
+
+h6 {
+    text-align: center;
+}
+
 .container {
     background-color: white;
 }
@@ -15,4 +24,15 @@ h3 {
 
 #logoImg {
     margin-top: 30px;
+}
+
+#destaque {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#footer {
+    color: white;
+    padding-top: 50px;;
+    background-color: darkgray;
 }
