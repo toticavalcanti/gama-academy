@@ -23,11 +23,19 @@ function pop(){
     }
 }
 
-push(30)
-push(20)
-push(5)
+function emptyStack(){
+    return top == -1
+}
 
-console.log(elements)
-console.log(pop())
-console.log(pop())
-console.log(pop())
+let rest;
+decNum = 10
+
+while(decNum != 0){
+    rest = parseInt(decNum % 2)
+    push(rest)
+    decNum = parseInt(decNum / 2)
+}
+
+while(!emptyStack()){
+    console.log(pop())
+}
