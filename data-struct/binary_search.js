@@ -7,7 +7,7 @@ function binary_search(num){
     end = 9
 
     while ( start <= end ){
-        meio = ( start + end ) / 2
+        meio = parseInt( ( start + end ) / 2 )
         if( num == values[mid] ){
             return meio
         }else if( num > values[mid]){
