@@ -7,14 +7,16 @@ function binary_search(num){
     end = 9
 
     while ( start <= end ){
-        meio = parseInt( ( start + end ) / 2 )
+        mid = parseInt( ( start + end ) / 2 )
         if( num == values[mid] ){
-            return meio
+            return mid
         }else if( num > values[mid]){
             start = mid + 1
         }else{
-            end = meio - 1
+            end = mid - 1
         }
     }
     return -1
 }
+
+console.log(binary_search(51))
