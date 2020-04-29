@@ -31,7 +31,7 @@ function validation(cpf){
         let result_2 = sum % 11 < 2 ? 0 : 11 - ( sum % 11 )
 
         //second digit validation
-        if(result_2 != digits.charAt(1)){
+        if(result_2  != digits.charAt(1)){
             return false
         }
 
