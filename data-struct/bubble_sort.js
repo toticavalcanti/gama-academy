@@ -1,4 +1,4 @@
-values = [8, 7, 6, 5, 4, 3, 2, 1]
+values = [5, 4, 3, 2, 8, 7, 6, 1]
 
 function bubble_sort(){
     let start = 0
@@ -12,6 +12,7 @@ function bubble_sort(){
                 values[pos + 1] = tmp
             }
         }
+        
     }
 }
 
