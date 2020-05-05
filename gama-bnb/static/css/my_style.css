@@ -15,23 +15,26 @@ h6 {
 }
 
 #nav {
-    background-color: #F7F7F7; ;
+    background-color: #F7F7F7; 
+    justify-content: flex-end;
+}
+
+a.nav-link {
+    background-color: #2196f3;
 }
 
 .navbar-nav {
+    
     padding-top: 40px;
     padding-left: 150px;
 }
 
-#menu {
-    justify-content: flex-end;
-}
-
-#menu ul li a:visited {
+#nav ul li a:visited {
     color: #2196f3;
+    
 }
 
-#menu ul li a{
+#nav ul li a{
     float: left; text-decoration: none;
     color: #2196f3;
     padding: 10.5px 11px;
@@ -39,17 +42,19 @@ h6 {
     border-radius: 5px 5px 5px 5px;
 }
 
-#menu ul li a:visited{
+#nav ul li a:visited{
     color: white;}
 
-#menu ul li a:hover, .menu ul li .current
+#nav ul li a:hover, .menu ul li .current
 {
     color: #fff;
     background-color: #2196f3;
+    text-decoration: none;
 }
 
 #globo {
     background-color: transparent;
+    border: transparent;
 }
 
 
@@ -64,12 +69,6 @@ h6 {
 
 #covid-advise {
     background-color: #ececec;
-}
-
-
-#destaque {
-    margin-top: 30px;
-    margin-bottom: 30px;
 }
 
 #footer {
