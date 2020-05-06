@@ -57,7 +57,7 @@
                                 <a class="nav-link" class="btn btn-default btn-rounded" data-toggle="modal" data-target="#elegantModalForm">Cadastrar-se</a>
                             </li>
                         </ul>
-                    </div>
+                    </div>  
                 </nav>
             </div> <!--nav row end-->
 
@@ -65,6 +65,8 @@
             <div class="modal fade" id="elegantModalForm" tabindex="-1" role="dialog" aria-labelledby="signInLabel"
             aria-hidden="true">
                 <div class="modal-dialog" role="document">
+                    <form action="/create" method="POST" novalidate="" data-testid="auth-form">
+                    <input type="hidden" name="authenticity_token" value="true">
                     <!--Content-->
                     <div class="modal-content form-elegant">
                         <!--Header-->
@@ -76,7 +78,6 @@
                         </div>
                         <!--Body-->
                         <div class="modal-body mx-4">
-                        <!--Body-->
                         <div class="md-form mb-5">
                             <div class="label-country-dad">
                                 <label class="label-country" data-error="wrong" data-success="right" for="country">País/Região</label>
@@ -351,24 +352,81 @@
                             </div>
                         </div><!--end OR (ou)-->
 
-                        <p class="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2"> or Sign in
-                            with:</p>
+                        <!--Social-->
+                        <div class="slot-social">
+                            
+                            <button data-testid="social-auth-button-email" type="button" id="button-solid-color" class="btn blue-gradient btn-block btn-rounded z-depth-1a">
+                               <div class="text-button-email">
+                                  <div class="email-icon">
+                                        <svg viewBox="0 0 24 24" role="presentation" aria-hidden="true" focusable="false" style="height: 20px; width: 20px; display: block; fill: currentcolor;">
+                                            <path d="m22.5 4h-21c-.83 0-1.5.67-1.5 1.51v12.99c0 .83.67 1.5 1.5 1.5h20.99a1.5 1.5 0 0 0 1.51-1.51v-12.98c0-.84-.67-1.51-1.5-1.51zm.5 14.2-6.14-7.91 6.14-4.66v12.58zm-.83-13.2-9.69 7.36c-.26.2-.72.2-.98 0l-9.67-7.36h20.35zm-21.17.63 6.14 4.67-6.14 7.88zm.63 13.37 6.3-8.1 2.97 2.26c.62.47 1.57.47 2.19 0l2.97-2.26 6.29 8.1z" fill-rule="evenodd"></path>
+                                        </svg>
+                                    </div>
+                                     <div class="label-social"> 
+                                        <a href="sign_in.html" id="email" data-target="#modal">Continuar com email</a>
+                                    </div>
+                               </div>
+                            </button>
+                         </div>
 
-                        <div class="row my-3 d-flex justify-content-center">
-                            <!--Facebook-->
-                            <button type="button" class="btn btn-white btn-rounded mr-md-3 z-depth-1a"><i class="fab fa-facebook-f text-center"></i></button>
-                            <!--Twitter-->
-                            <button type="button" class="btn btn-white btn-rounded mr-md-3 z-depth-1a"><i class="fab fa-twitter"></i></button>
-                            <!--Google +-->
-                            <button type="button" class="btn btn-white btn-rounded z-depth-1a"><i class="fab fa-google-plus-g"></i></button>
-                        </div>
-                        </div>
-                        <!--Footer-->
-                        <div class="modal-footer mx-5 pt-3 mb-1">
-                        <p class="font-small grey-text d-flex justify-content-end">Not a member? <a href="#" class="blue-text ml-1">
-                            Sign Up</a></p>
-                        </div>
-                    </div>/.Content
+                         <div class="slot-social">
+                            <button data-testid="social-auth-button-face" type="button" id="button-solid-color" class="btn blue-gradient btn-block btn-rounded z-depth-1a">
+                               <div class="text-button-email">
+                                <div class="facebook-icon">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="presentation" aria-hidden="true" focusable="false" style="height: 20px; width: 20px; display: block; fill: currentcolor;">
+                                        <defs>
+                                           <path id="a" d="M.001 0H24v23.854H.001z"></path>
+                                        </defs>
+                                        <g fill="none"    >
+                                           <mask id="b" fill="#fff">
+                                              <use xlink:href="#a"></use>
+                                           </mask>
+                                           <path d="M24 12c0-6.627-5.373-12-12-12S0 5.373 0 12c0 5.99 4.388 10.954 10.125 11.854V15.47H7.078V12h3.047V9.356c0-3.007 1.792-4.668 4.533-4.668 1.312 0 2.686.234 2.686.234v2.953H15.83c-1.491 0-1.956.925-1.956 1.874V12h3.328l-.532 3.469h-2.796v8.385C19.612 22.954 24 17.99 24 12" fill="#1877F2" mask="url(#b)"></path>
+                                           <path d="M16.671 15.469L17.203 12h-3.328V9.749c0-.949.465-1.874 1.956-1.874h1.513V4.922s-1.374-.234-2.686-.234c-2.741 0-4.533 1.66-4.533 4.668V12H7.078v3.469h3.047v8.385a12.09 12.09 0 003.75 0V15.47h2.796" fill="#FFF"></path>
+                                        </g>
+                                     </svg>
+                                 </div>
+                                 <div class="label-social">Continuar com Facebook</div>
+                               </div>
+                            </button>
+                         </div>
+
+                         <div class="slot-social">
+                            <button data-testid="social-auth-button-google" type="button" id="button-solid-color" class="btn blue-gradient btn-block btn-rounded z-depth-1a">
+                               <div class="text-button-email">
+                                  <div class="social-icons">
+                                    <svg viewBox="0 0 18 18" role="presentation" aria-hidden="true" focusable="false" style="height: 20px; width: 20px; display: block;">
+                                        <g fill="none" fill-rule="evenodd">
+                                           <path d="M9 3.48c1.69 0 2.83.73 3.48 1.34l2.54-2.48C13.46.89 11.43 0 9 0 5.48 0 2.44 2.02.96 4.96l2.91 2.26C4.6 5.05 6.62 3.48 9 3.48z" fill="#EA4335"></path>
+                                           <path d="M17.64 9.2c0-.74-.06-1.28-.19-1.84H9v3.34h4.96c-.1.83-.64 2.08-1.84 2.92l2.84 2.2c1.7-1.57 2.68-3.88 2.68-6.62z" fill="#4285F4"></path>
+                                           <path d="M3.88 10.78A5.54 5.54 0 0 1 3.58 9c0-.62.11-1.22.29-1.78L.96 4.96A9.008 9.008 0 0 0 0 9c0 1.45.35 2.82.96 4.04l2.92-2.26z" fill="#FBBC05"></path>
+                                           <path d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.84-2.2c-.76.53-1.78.9-3.12.9-2.38 0-4.4-1.57-5.12-3.74L.97 13.04C2.45 15.98 5.48 18 9 18z" fill="#34A853"></path>
+                                           <path d="M0 0h18v18H0V0z"></path>
+                                        </g>
+                                     </svg>
+                                    </div>
+                                     <div class="label-social"> 
+                                      Continuar com Google
+                                    </div>
+                               </div>
+                            </button>
+                         </div>
+
+                         <div class="slot-social">
+                            <button data-testid="social-auth-button-apple" type="button" id="button-solid-color" class="btn blue-gradient btn-block btn-rounded z-depth-1a">
+                               <div class="text-button-email">
+                                  <div class="social-icons">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="presentation" aria-hidden="true" focusable="false" style="height: 20px; width: 20px; display: block; fill: currentcolor;">
+                                        <path d="m13.3 2.1a5.1 5.1 0 0 1 3.8-2.1 5.1 5.1 0 0 1 -1.2 3.8 4.1 4.1 0 0 1 -3.6 1.7 4.5 4.5 0 0 1 1-3.4zm-5 3.7c-2.8 0-5.8 2.5-5.8 7.3 0 4.9 3.5 10.9 6.3 10.9 1 0 2.5-1 4-1s2.6.9 4 .9c3.1 0 5.3-6.4 5.3-6.4a5.3 5.3 0 0 1 -3.2-4.9 5.2 5.2 0 0 1 2.6-4.5 5.4 5.4 0 0 0 -4.7-2.4c-2 0-3.5 1.1-4.3 1.1-.9 0-2.4-1-4.2-1z"></path>
+                                     </svg>
+                                    </div>
+                                     <div class="label-social"> 
+                                      Continuar com email
+                                    </div>
+                               </div>
+                            </button>
+                         </div>
+                     </div><!--end content-->
                 </div>
             </div>
             <!-- Modal -->

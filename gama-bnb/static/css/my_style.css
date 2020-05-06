@@ -19,6 +19,14 @@ h6 {
     justify-content: flex-end;
 }
 
+.label-social a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
+}
+
 a.nav-link {
     background-color: #2196f3;
 }
@@ -29,17 +37,17 @@ a.nav-link {
     padding-left: 150px;
 }
 
-#nav ul li a:visited {
-    color: #2196f3;
-    
-}
-
 #nav ul li a{
     float: left; text-decoration: none;
     color: #2196f3;
     padding: 10.5px 11px;
     background-color: #F7F7F7; 
     border-radius: 5px 5px 5px 5px;
+}
+
+#nav ul li a:visited {
+    color: #2196f3;
+    
 }
 
 #nav ul li a:visited{
