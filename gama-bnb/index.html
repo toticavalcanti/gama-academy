@@ -54,7 +54,7 @@
                                 <a class="nav-link" class="btn btn-default btn-rounded"> Entrar<span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item" class="nav-item active">
-                                <a class="nav-link" class="btn btn-default btn-rounded" data-toggle="modal" data-target="#elegantModalForm">Cadastrar-se</a>
+                                <a href="modal_form.html" id="form" class="nav-link" class="btn btn-default btn-rounded" data-toggle="modal" data-target="#elegantModalForm">Cadastrar-se</a>
                             </li>
                         </ul>
                     </div>  
@@ -62,7 +62,7 @@
             </div> <!--nav row end-->
 
             <!-- Modal -->
-            <div class="modal fade" id="elegantModalForm" tabindex="-1" role="dialog" aria-labelledby="signInLabel"
+            <div class="modal fade" id="elegantModalForm" tabindex="-1" role="dialog" aria-labelledby="signOutLabel"
             aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <form action="/create" method="POST" novalidate="" data-testid="auth-form">
@@ -363,7 +363,7 @@
                                         </svg>
                                     </div>
                                      <div class="label-social"> 
-                                        <a href="sign_in.html" id="email" data-target="#modal">Continuar com email</a>
+                                        <a href="sign_up.html" id="email" data-target="#modal">Continuar com email</a>
                                     </div>
                                </div>
                             </button>
