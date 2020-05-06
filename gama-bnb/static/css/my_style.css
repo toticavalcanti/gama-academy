@@ -1,3 +1,30 @@
+Skip to content
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@toticavalcanti 
+toticavalcanti
+/
+gama-academy
+1
+00
+ Code
+ Issues 0
+ Pull requests 0 Actions
+ Projects 0
+ Wiki
+ Security 0
+ Insights
+ Settings
+gama-academy/gama-bnb/static/css/my_style.css
+@toticavalcanti toticavalcanti upload css my_style and images gama-bnb.png and globo-icon.png
+35ae631 22 hours ago
+78 lines (60 sloc)  1015 Bytes
+  
 body{
     background-color: white;
 }
@@ -19,14 +46,6 @@ h6 {
     justify-content: flex-end;
 }
 
-.label-social a {
-    text-decoration: none;
-}
-
-a:visited {
-    color: white;
-}
-
 a.nav-link {
     background-color: #2196f3;
 }
@@ -37,6 +56,11 @@ a.nav-link {
     padding-left: 150px;
 }
 
+#nav ul li a:visited {
+    color: #2196f3;
+    
+}
+
 #nav ul li a{
     float: left; text-decoration: none;
     color: #2196f3;
@@ -44,14 +68,6 @@ a.nav-link {
     background-color: #F7F7F7; 
     border-radius: 5px 5px 5px 5px;
 }
-
-#nav ul li a:visited {
-    color: #2196f3;
-    
-}
-
-#nav ul li a:visited{
-    color: white;}
 
 #nav ul li a:hover, .menu ul li .current
 {
@@ -84,3 +100,15 @@ a.nav-link {
     padding-top: 50px;;
     background-color: darkgray;
 }
+© 2020 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
