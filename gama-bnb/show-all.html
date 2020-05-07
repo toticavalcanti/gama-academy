@@ -1,0 +1,321 @@
+<html>
+    <head>
+        <title>GamaBNB</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" /> 
+        <link rel="stylesheet" href="./static/css/my_style.css">
+        <link rel="stylesheet" href="./static/css/modal.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+        <link rel="icon" type="imagem/png" href="./static/img/android-icon-72x72.png" />
+        <!-- Font special for pages-->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+
+        <!-- Main CSS-->
+        <link href="./static/css/search_row.css" rel="stylesheet" media="all">
+    </head>
+
+    <body>
+        <div class="container-fluid">
+            <div class="row" id="covid-advise">
+                <div class="col-md-12">
+                    <p class="text-center">
+                        Confira informações atualizadas sobre nossas políticas de cancelamento 
+                        e ações em resposta à COVID-19. <a href="#" target="_blank">Saiba mais</a>
+                    </p>
+                </div>
+            </div><!--end covid-advise row-->
+
+            <div class="row" id="nav"> 
+                <div class="col-md-12">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <div>
+                            <img id="logo" alt="Bootstrap Image Preview" style="width:180;" src="./static/img/gama-bnb.png"/>
+                        </div>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        </button>
+                    
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item" class="nav-item active">
+                                    <div class="dropdown" >
+                                        <button id="globo" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                                            <img src="./static/img/globo-icon.png" />                          
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="nav-link" class="btn btn-default btn-rounded">Português(BR)</a></li>
+                                            <li><a class="nav-link" class="btn btn-default btn-rounded">R$ BRL</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="nav-item" class="nav-item active">
+                                    <a class="nav-link" class="btn btn-default btn-rounded">Hospede em sua acomodação<span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item" class="nav-item active">
+                                    <a class="nav-link" class="btn btn-default btn-rounded">Hospede uma experiência<span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item" class="nav-item active">
+                                    <a class="nav-link" class="btn btn-default btn-rounded">Ajuda<span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item" class="nav-item active">
+                                    <a href="./sign_up.html" onClick="return popup(this, 'notes')">Entrar<span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item" class="nav-item active">
+                                    <a href="./modal_form.html" onClick="return popup(this, 'notes')">Cadastrar-se<span class="sr-only">(current)</span></a>
+                                </li>
+                            </ul>
+                        </div>  
+                    </nav>
+                </div>  
+            </div> <!--nav row end-->
+        </div>
+
+        <!-- start search row and bar-->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card-body" >
+                    <form class="form" class="d-sm-inline-flex" method="POST" action="#">
+                        <button class="btn-submit" type="submit" class="btn btn-success">
+                            <div id="search-text-icon">
+                                <i class="fa fa-search"></i> 
+                                    buscar
+                            </div>
+                        </button>
+
+                        <div class="input-group input--large">
+                            <label class="lbl">Localização</label>
+                            <input class="lbl_placeholder_menu" class="input--style-1" type="text" placeholder="Insira um lugar" name="going">
+                        </div>                      
+
+                        <div class="dropdown">
+
+                            <button class="input-group input--large" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <label class="lbl" class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hóspedes</label>
+                                <input class="lbl_placeholder_menu" class="input--style-1" type="text" name="checkin" placeholder="Número de hóspedes" id="input-start">
+                            </button>
+
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+                                <button class="dropdown-item" type="button">
+
+                                    <div id="adult">
+                                        <label class="lbl"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Adultos</label>
+                                        <label class="lbl_placeholder"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Acima de 13 anos</label>
+                                    </div>
+
+                                    <div class="counter">
+                                        <span class="minus">-</span>  
+                                        <span class="increase-decrease" aria-hidden="true">0</span>
+                                        <span class="plus">+</span>    
+                                    </div>
+
+                                </button>
+
+                                <button class="dropdown-item" type="button">
+
+                                    <div id="child">
+                                        <label class="lbl"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Crianças</label>
+                                        <label class="lbl_placeholder"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Idade 2 – 12</label>
+                                    </div>
+
+                                    <div class="counter">
+                                        <span class="minus">-</span> 
+                                        <span class="increase-decrease" aria-hidden="true">0</span>
+                                        <span class="plus">+</span>
+                                    </div>
+
+                                </button>
+
+                                <button class="dropdown-item" type="button">
+                                    <div id="baby">
+                                        <label class="lbl"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bebês</label>
+                                        <label class="lbl_placeholder"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menor de 2 anos</label>
+                                    </div>
+
+                                    <div class="counter">
+                                        <span class="minus">-</span>  
+                                        <span class="increase-decrease" aria-hidden="true">0</span>
+                                        <span class="plus">+</span>
+                                    </div>
+
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="dropdown">
+                            <button class="input-group input--large" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <label class="lbl" class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Checkin/checkout</label>
+                                <input class="lbl_placeholder_menu" class="input--style-1" type="text" name="checkin" placeholder="Escolha as data" id="input-start">
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <button class="dropdown-item" type="button">
+                                    <div class="input-group input--large">
+                                        <!-- HTML Form (wrapped in a .bootstrap-iso div) -->
+                                        <div class="bootstrap-iso">
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                            <form class="form-horizontal" method="post">
+                                                <div class="form-group ">
+                                                    <label class="control-label col-sm-2 requiredField" for="date">
+                                                    </label>
+                                                    <div class="col-sm-10">
+                                                        <div class="input-group">
+                                                        <div class="input-group-addon">
+                                                            <i class="fa fa-calendar">
+                                                            </i>
+                                                        </div>
+                                                        <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="col-sm-10 col-sm-offset-2">
+                                                        <button id="pronto-button" class="btn btn-primary " name="submit" type="submit">
+                                                        Pronto
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>  
+                        
+                        
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--end search row and bar-->
+
+        <!--start row support phrase-->
+        <div class="row" id="support-phrase">
+            <div class="col-md-7">
+                <section>
+                    <h1 tabindex="-1" class="_14i3z6h">
+                        <span>Podemos estar afastados, mas vamos superar isso juntos.</span>
+                    </h1>
+                </section>
+            </div>
+        </div><!--end row support phrase-->
+
+        <!--start tree cards row-->
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://a0.muscache.com/im/pictures/83de85c5-ce24-4cc4-ae85-dfb2300b4a06.jpg?aki_policy=xx_large" class="card-img-top" alt="...">
+                    <h3 class="card-title">Experiência online</h3>
+                    <div class="card-body">
+                        <p class="card-text">Atividades únicas que podemos fazer juntos, lideradas por um mundo de anfitriões.</p>
+                        <button type="button" class="btn btn-primary">
+                            Quero!
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://a0.muscache.com/im/pictures/d5dbb5b2-12a3-4de5-87d0-5a66841eb731.jpg?aki_policy=xx_large" alt="...">
+                    <h3 class="card-title">Estadas prolongadas</h3>
+                    <div class="card-body">
+                        <p class="card-text">Sinta-se em casa no Gamabnb com estadas de um mês ou mais.</p>
+                        <button type="button" class="btn btn-primary">
+                            Quero!
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://a0.muscache.com/im/pictures/ce7dd48a-8125-4cea-a1b7-27ce0068d5d8.jpg?aki_policy=x_large" class="card-img-top" alt="...">
+                    <h3 class="card-title">Informações atualizadas</h3>
+                    <div class="card-body">
+                        <p class="card-text">Saiba mais sobre as ações que estamos tomando em relação à COVID-19</p>
+                        <button type="button" class="btn btn-primary">
+                            Quero!
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <!--end tree cards row-->
+
+        <!--Pagination-->
+        <div class="row">
+            <div class="col-md-12">
+                <nav>
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <a class="page-link" href="#">Previous</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">1</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">3</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">4</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">5</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div><!--end covid-advise row-->
+
+
+        <!-- Jquery JS-->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <!-- Vendor JS-->
+        <script src="vendor/select2/select2.min.js"></script>
+        <script src="vendor/jquery-validate/jquery.validate.min.js"></script>
+        <script src="vendor/bootstrap-wizard/bootstrap.min.js"></script>
+        <script src="vendor/bootstrap-wizard/jquery.bootstrap.wizard.min.js"></script>
+        <script src="vendor/datepicker/moment.min.js"></script>
+        <script src="vendor/datepicker/daterangepicker.js"></script>
+    
+        <!-- Main JS-->
+        <script src="js/global.js"></script>
+        
+        <script 
+            src="https://code.jquery.com/jquery-3.4.1.slim.min.js" 
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" 
+            crossorigin="anonymous">
+        </script>
+        <script 
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" 
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" 
+            crossorigin="anonymous">
+        </script>
+        <script 
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" 
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" 
+            crossorigin="anonymous">
+        </script>
+
+        <!-- Extra JavaScript/CSS added manually in "Settings" tab -->
+        <!-- Include jQuery -->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+        <!-- Include Date Range Picker -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+        <!--my css(s)-->
+        <script src="./static/js/calendar.js" ></script>
+        <script src="./static/js/popup.js" ></script>
+    </body>
+</html>
