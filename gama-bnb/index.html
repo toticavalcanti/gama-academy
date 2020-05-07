@@ -2,6 +2,7 @@
     <head>
         <title>GamaBNB</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" /> 
         <link rel="stylesheet" href="./static/css/my_style.css">
         <link rel="stylesheet" href="./static/css/modal.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
@@ -68,38 +69,101 @@
         </div>
 
         <!-- start search row and bar-->
-        <div class="row" id="search row">
-            <div class="card-body">
-                <form class="form" method="POST" action="#">
-                    <div class="input-group input--large">
-                        <label class="label">going to</label>
-                        <input class="input--style-1" type="text" placeholder="Destination, hotel name" name="going">
-                    </div>
+        <div class="row">
+            <div class="card-body" >
+                <form class="form" id="search-row" method="POST" action="#">
                     <div class="input-group input--medium">
-                        <label class="label">Check-In</label>
-                        <input class="input--style-1" type="text" name="checkin" placeholder="mm/dd/yyyy" id="input-start">
+                        <label class="lbl">Localização</label>
+                        <input class="lbl_placeholder_menu" class="input--style-1" type="text" placeholder="Insira um lugar" name="going">
                     </div>
-                    <div class="input-group input--medium">
-                        <label class="label">Check-Out</label>
-                        <input class="input--style-1" type="text" name="checkout" placeholder="mm/dd/yyyy" id="input-end">
-                    </div>
-                    <div class="input-group input--medium">
-                        <label class="label">guests</label>
-                        <div class="input-group-icon js-number-input">
-                            <div class="icon-con">
-                                <span class="plus">+</span>
-                                <span class="minus">-</span>
-                            </div>
-                            <input class="input--style-1 quantity" type="text" name="guests" value="2 Guests">
+
+                    <div class="dropdown">
+                        <button class="input-group input--medium" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <label class="lbl" class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Checkin</label>
+                            <input class="lbl_placeholder_menu" class="input--style-1" type="text" name="checkin" placeholder="Escolha uma data" id="input-start">
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <button class="dropdown-item" type="button">
+                                <div class="adult-age">
+                                    <label class="lbl"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Adultos</label>
+                                    <label class="lbl_placeholder"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">A partir de 13</label>
+                                </div>
+                                <div class="counter">
+                                    <span class="plus">+</span>
+                                    <span class="increase-decrease" aria-hidden="true">0</span>
+                                    <span class="minus">-</span>        
+                                </div>
+                            </button>
                         </div>
                     </div>
+                
+
+
+                    <!-- $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
+                    <div class="dropdown">
+
+                        <button class="input-group input--medium" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <label class="lbl" class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">guests</label>
+                            <input class="lbl_placeholder_menu" class="input--style-1" type="text" name="checkin" placeholder="Número de hóspedes" id="input-start">
+                        </button>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+                            <button class="dropdown-item" type="button">
+
+                                <div id="adult">
+                                    <label class="lbl"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Adultos</label>
+                                    <label class="lbl_placeholder"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Acima de 13 anos</label>
+                                </div>
+
+                                <div class="counter">
+                                    <span class="plus">+</span>
+                                    <span class="increase-decrease" aria-hidden="true">0</span>
+                                    <span class="minus">-</span>        
+                                </div>
+
+                            </button>
+
+                            <button class="dropdown-item" type="button">
+
+                                <div id="child">
+                                    <label class="lbl"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Crianças</label>
+                                    <label class="lbl_placeholder"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Idade 2 – 12</label>
+                                </div>
+
+                                <div class="counter">
+                                    <span class="plus">+</span>
+                                    <span class="increase-decrease" aria-hidden="true">0</span>
+                                    <span class="minus">-</span>        
+                                </div>
+
+                            </button>
+
+                            <button class="dropdown-item" type="button">
+                                <div id="baby">
+                                    <label class="lbl"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bebês</label>
+                                    <label class="lbl_placeholder"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menor de 2 anos</label>
+                                </div>
+
+                                <div class="counter">
+                                    <span class="plus">+</span>
+                                    <span class="increase-decrease" aria-hidden="true">0</span>
+                                    <span class="minus">-</span>        
+                                </div>
+
+                            </button>
+                        </div>
+                      </div>
                     
-                    <button class="btn-submit" type="submit">search</button>
+                    <button class="btn-submit" type="submit" class="btn btn-success">
+                       <div id="search-text-icon">
+                        <i class="fa fa-search"></i> 
+                            buscar
+                        </div>
+                    </button>
                 </form>
             </div>
         </div>
-        
-
         <!--end search row and bar-->
 
         <!-- Jquery JS-->
@@ -134,6 +198,27 @@
             integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" 
             crossorigin="anonymous">
         </script>
+
+        <!-- Extra JavaScript/CSS added manually in "Settings" tab -->
+<!-- Include jQuery -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<!-- Include Date Range Picker -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+<script>
+	$(document).ready(function(){
+		var date_input=$('input[name="date"]'); //our date input has the name "date"
+		var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+		date_input.datepicker({
+			format: 'mm/dd/yyyy',
+			container: container,
+			todayHighlight: true,
+			autoclose: true,
+		})
+	})
+</script>
         
     </body>
 </html>

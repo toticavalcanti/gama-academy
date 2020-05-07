@@ -112,6 +112,29 @@ button {
   font-family: inherit;
 }
 
+.lbl {
+  font-size: 15px;
+  text-align: center;
+  color: #999;
+  text-transform: uppercase;
+  display: block;
+  font-weight: 700;
+  bottom:0;
+  width:100%;
+  left:10%;
+}
+
+.lbl_placeholder {
+  font-size: 10px;
+  color: #999;
+}
+
+.lbl_placeholder_menu {
+  font-size: 15px;
+  text-align: center;
+  color: #999;
+}
+
 /* ==========================================================================
    #PAGE WRAPPER
    ========================================================================== */
@@ -181,6 +204,11 @@ a:hover {
 
 a:active {
   text-decoration: none;
+}
+
+.card-body {
+  flex-direction: row;
+  padding-left: 180px;;
 }
 
 /* ==========================================================================
@@ -327,8 +355,10 @@ a:active {
    ========================================================================== */
 
 .btn-submit {
+  width: 190px;
+  height: 66px;
   display: inline-block;
-  line-height: 80px;
+  line-height: 75px;
   font-family: inherit;
   background: #2196f3;
   -webkit-border-radius: 10px;
@@ -652,7 +682,7 @@ button {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
-  background: #00ad5f;
+  background: #2196f3;
 }
 
 .input-group {
@@ -661,14 +691,18 @@ button {
   -webkit-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
-  padding: 16px 20px;
-  padding-bottom: 10px;
+  padding: 16px 10px;
+  padding-bottom: 0px;
   background: #fff;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
   float: left;
   margin-right: 10px;
+}
+
+.search-row {
+  margin-left: 0px;
 }
 
 .form::after {
@@ -696,14 +730,6 @@ button {
   -o-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
   transition: all 0.4s ease;
-}
-
-.label {
-  font-size: 12px;
-  color: #999;
-  text-transform: uppercase;
-  display: block;
-  font-weight: 700;
 }
 
 .input--large {
@@ -768,6 +794,34 @@ button {
 /* ==========================================================================
    #SELECT
    ========================================================================== */
+
+   .dropdown-item {
+    width: 189px !important;
+    -webkit-box-align: center !important;
+    align-items: center !important;
+    display: flex !important;
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+    padding-left: 20px !important;
+    padding-right: 24px !important;
+}
+
+#adult {
+    margin-right: 9px;
+}
+
+#child {
+    margin-right: 15px;
+}
+
+#baby {
+    margin-right: 15px;
+}
+
+.increase-decrease {
+    color: #999;
+}
+
 .quantity {
   font-size: 18px;
   color: #333;
