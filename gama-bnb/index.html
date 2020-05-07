@@ -104,9 +104,9 @@
                                     </div>
 
                                     <div class="counter">
-                                        <span class="plus">+</span>
+                                        <span class="minus">-</span>  
                                         <span class="increase-decrease" aria-hidden="true">0</span>
-                                        <span class="minus">-</span>        
+                                        <span class="plus">+</span>    
                                     </div>
 
                                 </button>
@@ -119,9 +119,9 @@
                                     </div>
 
                                     <div class="counter">
-                                        <span class="plus">+</span>
+                                        <span class="minus">-</span> 
                                         <span class="increase-decrease" aria-hidden="true">0</span>
-                                        <span class="minus">-</span>        
+                                        <span class="plus">+</span>
                                     </div>
 
                                 </button>
@@ -133,9 +133,9 @@
                                     </div>
 
                                     <div class="counter">
-                                        <span class="plus">+</span>
+                                        <span class="minus">-</span>  
                                         <span class="increase-decrease" aria-hidden="true">0</span>
-                                        <span class="minus">-</span>        
+                                        <span class="plus">+</span>
                                     </div>
 
                                 </button>
@@ -190,6 +190,59 @@
         </div>
         <!--end search row and bar-->
 
+        <!--start row support phrase-->
+        <div class="row" id="support-phrase">
+            <div class="col-md-7">
+                <section>
+                    <h1 tabindex="-1" class="_14i3z6h">
+                        <span>Podemos estar afastados, mas vamos superar isso juntos.</span>
+                    </h1>
+                </section>
+            </div>
+        </div><!--end row support phrase-->
+
+        <!--start tree cards row-->
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="./static/img/online-experience.jpg" class="card-img-top" alt="...">
+                    <h3 class="card-title">Experiência online</h3>
+                    <div class="card-body">
+                        <p class="card-text">Atividades únicas que podemos fazer juntos, lideradas por um mundo de anfitriões.</p>
+                        <button type="button" class="btn btn-primary">
+                            Quero!
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="./static/img/estadas-prolongadas.jpg" class="card-img-top" alt="...">
+                    <h3 class="card-title">Estadas prolongadas</h3>
+                    <div class="card-body">
+                        <p class="card-text">Sinta-se em casa no Gamabnb com estadas de um mês ou mais.</p>
+                        <button type="button" class="btn btn-primary">
+                            Quero!
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="./static/img/online-experience.jpg" class="card-img-top" alt="...">
+                    <h3 class="card-title">Experiência online</h3>
+                    <div class="card-body">
+                        <p class="card-text">Some quick example text to build on the card 
+                          title and make up the bulk of the card's content.</p>
+                        <button type="button" class="btn btn-primary">
+                            Quero!
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end tree cards row-->
+
         <!-- Jquery JS-->
         <script src="vendor/jquery/jquery.min.js"></script>
         <!-- Vendor JS-->
@@ -202,10 +255,6 @@
     
         <!-- Main JS-->
         <script src="js/global.js"></script>
-
-        <script 
-            src="./static/js/popup.js" >
-        </script>
         
         <script 
             src="https://code.jquery.com/jquery-3.4.1.slim.min.js" 
@@ -224,25 +273,15 @@
         </script>
 
         <!-- Extra JavaScript/CSS added manually in "Settings" tab -->
-<!-- Include jQuery -->
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <!-- Include jQuery -->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 
-<!-- Include Date Range Picker -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+        <!-- Include Date Range Picker -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 
-<script>
-	$(document).ready(function(){
-		var date_input=$('input[name="date"]'); //our date input has the name "date"
-		var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
-		date_input.datepicker({
-			format: 'mm/dd/yyyy',
-			container: container,
-			todayHighlight: true,
-			autoclose: true,
-		})
-	})
-</script>
-        
+        <!--my css(s)-->
+        <script src="./static/js/calendar.js" ></script>
+        <script src="./static/js/popup.js" ></script>
     </body>
 </html>
