@@ -3,15 +3,17 @@
         <title>GamaBNB</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" /> 
-        <link rel="stylesheet" href="./static/css/my_style.css">
-        <link rel="stylesheet" href="./static/css/modal.css">
+
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
         <link rel="icon" type="imagem/png" href="./static/img/android-icon-72x72.png" />
         <!-- Font special for pages-->
         <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
 
-        <!-- Main CSS-->
+        <!-- my CSS-->
         <link href="./static/css/search_row.css" rel="stylesheet" media="all">
+        <link rel="stylesheet" href="./static/css/my_style.css">
+        <link rel="stylesheet" href="./static/css/modal.css">
+        <link rel="stylesheet" href="./static/css/dates.css">
     </head>
 
     <body>
@@ -95,22 +97,22 @@
                             </button>
 
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-
+                                <!--adult option-->
                                 <button class="dropdown-item" type="button">
-
+                                    
                                     <div id="adult">
                                         <label class="lbl"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Adultos</label>
                                         <label class="lbl_placeholder"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Acima de 13 anos</label>
                                     </div>
 
                                     <div class="counter">
-                                        <span class="minus">-</span>  
-                                        <span class="increase-decrease" aria-hidden="true">0</span>
-                                        <span class="plus">+</span>    
+                                        <span class="minus" id="count-minus-adult">-</span>  
+                                        <input type="number" class="increase-decrease" aria-hidden="true">0</span>
+                                        <span class="plus" id="count-plus-adult">+</span>    
                                     </div>
 
                                 </button>
-
+                                <!--child option-->
                                 <button class="dropdown-item" type="button">
 
                                     <div id="child">
@@ -119,13 +121,13 @@
                                     </div>
 
                                     <div class="counter">
-                                        <span class="minus">-</span> 
+                                        <span class="minus" id="count-minus-child">-</span> 
                                         <span class="increase-decrease" aria-hidden="true">0</span>
-                                        <span class="plus">+</span>
+                                        <span class="plus" id="count-plus-child">+</span>
                                     </div>
 
                                 </button>
-
+                                <!--baby option-->
                                 <button class="dropdown-item" type="button">
                                     <div id="baby">
                                         <label class="lbl"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bebês</label>
@@ -133,9 +135,9 @@
                                     </div>
 
                                     <div class="counter">
-                                        <span class="minus">-</span>  
+                                        <span class="minus" id="count-minus-baby">-</span>  
                                         <span class="increase-decrease" aria-hidden="true">0</span>
-                                        <span class="plus">+</span>
+                                        <span class="plus" id="count-plus-baby">+</span>
                                     </div>
 
                                 </button>
@@ -180,10 +182,7 @@
                                     </div>
                                 </button>
                             </div>
-                        </div>  
-                        
-                        
-                        
+                        </div>                          
                     </form>
                 </div>
             </div>
