@@ -12,6 +12,7 @@
         <link href="./static/css/search_row.css" rel="stylesheet" media="all">
         <link rel="stylesheet" href="./static/css/my_style.css">
         <link rel="stylesheet" href="./static/css/modal.css">
+        <link rel="stylesheet" href="./static/css/pagination.css">
     </head>
 
     <body>
@@ -190,118 +191,38 @@
         </div>
         <!--end search row and bar-->
 
-        <!--start row support phrase-->
-        <div class="row" id="support-phrase">
-            <div class="col-md-7">
-                <section>
-                    <h1 tabindex="-1" class="_14i3z6h">
-                        <span>Podemos estar afastados, mas vamos superar isso juntos.</span>
-                    </h1>
-                </section>
-            </div>
-        </div><!--end row support phrase-->
-
-        <!--start tree cards row-->
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    <img class="img" src="https://a0.muscache.com/im/pictures/83de85c5-ce24-4cc4-ae85-dfb2300b4a06.jpg?aki_policy=xx_large" class="card-img-top" alt="...">
-                    <h3 class="card-title">Casa</h3>
-                    <div class="card-body">
-                        <h4 class="h4-card" class="card-text">Quartos pertinho do Anhembi!</h4>
-                        <br/>
-                        <h4 class="h4-card"class="card-text">Preço</h4>
-                        <br/>
-                        <h4 class="h4-card">R$189.00</h4>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card">
-                    <img class="img" src="https://a0.muscache.com/im/pictures/bea86611-2f82-487a-a62e-17ab268515de.jpg?aki_policy=xx_large" class="card-img-top" alt="...">
-                    <h3 class="card-title">Chácara</h3>
-                    <div class="card-body">
-                        <h4 class="h4-card" class="card-text">Villa Monty.</h4>
-                        <br/>
-                        <h4 class="h4-card"class="card-text">Preço</h4>
-                        <br/>
-                        <h4 class="h4-card">R$1291.00</h4>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card">
-                    <img class="img" src="https://a0.muscache.com/im/pictures/ce7dd48a-8125-4cea-a1b7-27ce0068d5d8.jpg?aki_policy=x_large" class="card-img-top" alt="...">
-                    <h3 class="card-title">Chácara</h3>
-                    <div class="card-body">
-                        <h4 class="h4-card" class="card-text">Menorca Green Park C7</h4>
-                        <br/>
-                        <h4 class="h4-card"class="card-text">Preço</h4>
-                        <br/>
-                        <h4 class="h4-card">R$520.00</h4>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-        <!--end tree cards row-->
-
-        <!--Show all properties-->
-        <div class="row">
-            <div class="col-md-12">
-                <h2 class="text-center" id="show-all">
-                    <a href="show-all.html" target="_blank">Veja mais ofertas</a>
-                </h2>
-            </div>
-        </div><!--end covid-advise row-->                                           
+                                        
 
         <!--Pagination-->
-        <div class="row">
-            <div class="col-md-12">
-                <nav>
-                    <ul class="pagination">
-                        <li class="page-item">
-                            <a class="page-link" href="#">Previous</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">1</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">2</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">3</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">4</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">5</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">Next</a>
-                        </li>
-                    </ul>
-                </nav>
+        <div class="col-md-8">
+            <div class="pagination">
+                <div class="tableList" id="listingTable"></div>
+                <div class="pagination-block">
+
+                    <span class="pageButton outline-none" id="button_prev">
+                        Prev
+                    </span>
+
+                    <span id="page_number" class="outline-none"></span>
+
+                    <span class="pageButton outline-none" id="button_next">
+                        Next
+                    </span>
+                </div>
             </div>
-        </div><!--end covid-advise row-->
+        </div><!--end Pagination row-->
 
 
         <!-- Jquery JS-->
-        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <!-- Vendor JS-->
-        <script src="vendor/select2/select2.min.js"></script>
-        <script src="vendor/jquery-validate/jquery.validate.min.js"></script>
-        <script src="vendor/bootstrap-wizard/bootstrap.min.js"></script>
-        <script src="vendor/bootstrap-wizard/jquery.bootstrap.wizard.min.js"></script>
-        <script src="vendor/datepicker/moment.min.js"></script>
-        <script src="vendor/datepicker/daterangepicker.js"></script>
-    
-        <!-- Main JS-->
-        <script src="js/global.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/js/select2.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap-wizard/1.2/jquery.bootstrap.wizard.min.js"></script>
         
+    
+        <!-- Main JS-->        
         <script 
             src="https://code.jquery.com/jquery-3.4.1.slim.min.js" 
             integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" 
@@ -327,10 +248,13 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 
         <!--Vanilla JS-->
-        <script src="path/to/vanilla.js"></script>
+        <script src="./static/js/vanilla.js"></script>
 
         <!--my css(s)-->
+        <script src="./static/js/datepicker/moment.min.js"></script>
+        <script src="./static/js/datepicker/daterangepicker.js"></script>
         <script src="./static/js/calendar.js" ></script>
         <script src="./static/js/popup.js" ></script>
+        <script src="./static/js/pagination.js" ></script>
     </body>
 </html>

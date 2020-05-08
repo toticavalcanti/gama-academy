@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    font-family: Arial;
+    background-color: #888;
+  }
+  body .pagination {
+    max-width: 800px;
+    min-width: 700px;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    background-color: #2196f3;
+    padding: 20px;
+  }
+  body .pagination .tableList {
+    min-height: 250px;
+    text-indent: 20px;
+  }
+  body .tableList .objectBlock {
+    position: relative;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  body .pageButton {
+    border: 1px solid black;
+    padding: 5px;
+  }
+  body .clickPageNumber {
+    background-color: lightgrey;
+    padding: 5px;
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+  body .pagination-block {
+    text-align: center;
+    width: 100%;
+  }
+  body .pagination-block span {
+    display: inline-block;
+  }
+  body .pagination-block .pageButton {
+    background-color: grey;
+    color: white;
+  }
+  body .pagination-block span:hover {
+    cursor: pointer;
+  }
+  body .opacity {
+    opacity: 0.5;
+  }
+  body .outline-none {
+    outline: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+  }
+  
