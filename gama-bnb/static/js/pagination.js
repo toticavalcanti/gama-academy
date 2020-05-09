@@ -6,21 +6,21 @@
     return parent.appendChild(el);
   }
 
-  const ul = document.getElementById('authors');
+  const ul = document.getElementById('properties');
   const url = 'https://api.sheety.co/30b6e400-9023-4a15-8e6c-16aa4e3b1e72';
   fetch(url)
   .then((resp) => resp.json())
   .then(function(data) {
-    let authors = data;
-    console.log(authors)
-    return authors.map(function(author) {
+    let properties = data;
+    return properties.map(function(propertie) {
       let li = createNode('li'),
           img = createNode('img'),
           span = createNode('span');
-      img.src = author.photo;
-      span.innerHTML = `${author.name} ${author.photo}`;
+      img.src = propertie.photo;
+      span.innerHTML = `${propertie.name} ${propertie.price} ${propertie.property_type}`;
       append(li, img);
       append(li, span);
+
       append(ul, li);
     })
   })
