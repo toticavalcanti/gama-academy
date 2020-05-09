@@ -12,8 +12,13 @@ fetch(url)
 	.then((resp) => resp.json())
 	.then(function (data) {
 		let properties = data;
-		console.log(properties.length)
 		return properties.map(function (propertie) {
+
+			let addEventListeners = () => {
+				prevButton.addEventListener('click', prevPage);
+				nextButton.addEventListener('click', nextPage);   
+			}
+
 			let li    = createNode('li'),
 				img   = createNode('img'),
 				h3_01 = createNode('h3');
