@@ -1,0 +1,27 @@
+   {"result": [
+        {
+        "photo": "https://a0.muscache.com/im/pictures/e6c4b347-49c7-4840-8c00-df36a2a273da.jpg?aki_policy=x_large",
+        "property_type": "Apartamento",
+        "name": "Apartment in Son Parc, wonderful views",
+        "price": 433
+        },
+        {
+        "photo": "https://a0.muscache.com/im/pictures/4a5326cb-95e4-4220-a4d8-c91f50cf784c.jpg?aki_policy=xx_large",
+        "property_type": "Apartamento",
+        "name": "APARTAMENTO IDEAL PAREJAS EN SON PARC",
+        "price": 368
+        },
+        {
+        "photo": "https://a0.muscache.com/im/pictures/77a102a4-cf65-475e-be60-4d592307ab4a.jpg?aki_policy=xx_large",
+        "property_type": "Casa",
+        "name": "Casa Charmosa Bem Localizada",
+        "price": 70
+        },
+        {
+        "photo": "https://a0.muscache.com/im/pictures/83de85c5-ce24-4cc4-ae85-dfb2300b4a06.jpg?aki_policy=xx_large",
+        "property_type": "Casa",
+        "name": "Quartos pertinho do Anhembi!",
+        "price": 189
+        }
+    ]
+}
