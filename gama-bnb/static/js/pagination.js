@@ -15,12 +15,14 @@
     return properties.map(function(propertie) {
       let li = createNode('li'),
           img = createNode('img'),
-          span = createNode('span');
+          h3 = createNode('h3');
+          h4 = createNode('h4');
       img.src = propertie.photo;
-      span.innerHTML = `${propertie.name} ${propertie.price} ${propertie.property_type}`;
+      h3.innerHTML = `${propertie.name}  ${propertie.property_type}`;
+      h4.innerHTML = `$Valor: ${propertie.price}`
       append(li, img);
-      append(li, span);
-
+      append(li, h3);
+      append(li, h4);
       append(ul, li);
     })
   })
