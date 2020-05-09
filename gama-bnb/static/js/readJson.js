@@ -12,6 +12,7 @@ fetch(url)
 	.then((resp) => resp.json())
 	.then(function (data) {
 		let properties = data;
+		console.log(properties.length)
 		return properties.map(function (propertie) {
 			let li    = createNode('li'),
 				img   = createNode('img'),
