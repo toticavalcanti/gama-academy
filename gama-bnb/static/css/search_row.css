@@ -798,7 +798,7 @@ button {
    ========================================================================== */
 
    .dropdown-item {
-    width: 189px !important;
+    width: 288px !important;
     -webkit-box-align: center !important;
     align-items: center !important;
     display: flex !important;
