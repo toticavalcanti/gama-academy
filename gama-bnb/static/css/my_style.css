@@ -143,6 +143,7 @@ a.nav-link {
 #footer {
     margin-top: 30px;
     background-color: #2196f3;
+    width: 100%;
 }
 
 #social_net {
@@ -158,4 +159,12 @@ padding-bottom: 50px;
 .net {
     margin-left: 80px;
     margin-right: 90px;
+}
+
+h1 #covid {
+    margin-left: 50px;
+}
+
+#knowmore {
+    text-align: center;
 }

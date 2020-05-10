@@ -20,7 +20,7 @@ var muxiCoordinates = [-22.903719, -43.1760605];
 var muxiMarkerMessage = "A Muxi fica aqui.<br>Olá mundo!";
 
 var muxiIconProperties = {
-  iconUrl: "http://muxi.com.br/app/webroot/img/maps-marker.png"
+  iconUrl: "./static/img/maps-marker.png"
 , iconSize: [44, 59]
 , iconAnchor: [22, 59]
 , popupAnchor: [0, -50]
