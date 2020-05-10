@@ -13,24 +13,6 @@ fetch(url)
 	.then(function (data) {
 		let properties = data;
 		return properties.map(function (propertie) {
-
-			let addEventListeners = () => {
-				prevButton.addEventListener('click', prevPage);
-				nextButton.addEventListener('click', nextPage);   
-			}
-
-			let selectedPage = () => {
-				let page_number = document.getElementById('page_number').getElementsByClassName('clickPageNumber'); 
-				for (let i = 0; i < page_number.length; i++) {
-					if (i == current_page - 1) {
-						page_number[i].style.opacity = "1.0";
-					} 
-					else {
-						page_number[i].style.opacity = "0.5";
-					}
-				}   
-			} 
-
 			let li    = createNode('li'),
 				img   = createNode('img'),
 				h3_01 = createNode('h3');
