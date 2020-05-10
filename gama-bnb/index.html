@@ -3,18 +3,20 @@
         <title>GamaBNB</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" /> 
-
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
         <link rel="icon" type="imagem/png" href="./static/img/android-icon-72x72.png" />
         <!-- Font special for pages-->
         <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
-
+        <!--Maps leaflet-->
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
         <!-- my CSS-->
         <link href="./static/css/search_row.css" rel="stylesheet" media="all">
         <link rel="stylesheet" href="./static/css/my_style.css">
         <link rel="stylesheet" href="./static/css/search_row.css">
         <link rel="stylesheet" href="./static/css/modal.css">
         <link rel="stylesheet" href="./static/css/dates.css">
+        <link rel="stylesheet" href="./static/css/maps.css">
+        
     </head>
 
     <body>
@@ -188,9 +190,7 @@
                         </form>
                     </div>
                 </div>
-            </div>
-        
-        <!--end search row and bar-->       
+            </div><!--end search row and bar-->       
 
             <!--start tree cards row-->
             <div class="row">
@@ -233,19 +233,65 @@
                 </div>
             </div><!--end show all-->
 
+            <div id="offers-and-maps">
+                <div class="row" >
+                    <div class="col-md-7">
+                        <a name="offers">
+                        </a>
+                        <ul id="properties"></ul>
+                    </div>
 
-            <div class="row" >
-                <div class="col-md-7">
-                    <a name="offers">
-                    </a>
-
-                    <ul id="properties"></ul>
+                    <!--start leaflet maps-->
+                    <div class="col-md-5">
+                        <div id="map">
+                            <!--start leaflet maps-->
+                            <div class="map leaflet-container leaflet-fade-anim leaflet-grab leaflet-touch-drag" tabindex="0" style="outline: none;">
+                                <div class="leaflet-pane leaflet-map-pane">
+                                <div class="leaflet-pane leaflet-tile-pane">
+                                    <div class="leaflet-layer ">
+                                        <div class="leaflet-tile-container leaflet-zoom-animated">
+                                            <img alt="" role="presentation" src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/12/1516/2323?access_token=pk.eyJ1Ijoicm9tdWwzbWVsbyIsImEiOiJjazl6d2x4bTAwajFhM2twb2Fzcnd4YzlkIn0._FHtl86LFjP2Zg8Z9V4I6w" class="leaflet-tile leaflet-tile-loaded" style="width: 512px; height: 512px; transform: translate3d(-453px, 40px, 0px); opacity: 1;">
+                                            <img alt="" role="presentation" src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/12/1517/2323?access_token=pk.eyJ1Ijoicm9tdWwzbWVsbyIsImEiOiJjazl6d2x4bTAwajFhM2twb2Fzcnd4YzlkIn0._FHtl86LFjP2Zg8Z9V4I6w" class="leaflet-tile leaflet-tile-loaded" style="width: 512px; height: 512px; transform: translate3d(59px, 40px, 0px); opacity: 1;">
+                                            <img alt="" role="presentation" src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/12/1516/2322?access_token=pk.eyJ1Ijoicm9tdWwzbWVsbyIsImEiOiJjazl6d2x4bTAwajFhM2twb2Fzcnd4YzlkIn0._FHtl86LFjP2Zg8Z9V4I6w" class="leaflet-tile leaflet-tile-loaded" style="width: 512px; height: 512px; transform: translate3d(-453px, -472px, 0px); opacity: 1;">
+                                            <img alt="" role="presentation" src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/12/1517/2322?access_token=pk.eyJ1Ijoicm9tdWwzbWVsbyIsImEiOiJjazl6d2x4bTAwajFhM2twb2Fzcnd4YzlkIn0._FHtl86LFjP2Zg8Z9V4I6w" class="leaflet-tile leaflet-tile-loaded" style="width: 512px; height: 512px; transform: translate3d(59px, -472px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/12/1516/2324?access_token=pk.eyJ1Ijoicm9tdWwzbWVsbyIsImEiOiJjazl6d2x4bTAwajFhM2twb2Fzcnd4YzlkIn0._FHtl86LFjP2Zg8Z9V4I6w" class="leaflet-tile leaflet-tile-loaded" style="width: 512px; height: 512px; transform: translate3d(-453px, 552px, 0px); opacity: 1;">
+                                            <img alt="" role="presentation" src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/12/1517/2324?access_token=pk.eyJ1Ijoicm9tdWwzbWVsbyIsImEiOiJjazl6d2x4bTAwajFhM2twb2Fzcnd4YzlkIn0._FHtl86LFjP2Zg8Z9V4I6w" class="leaflet-tile leaflet-tile-loaded" style="width: 512px; height: 512px; transform: translate3d(59px, 552px, 0px); opacity: 1;"></div>
+                                        </div>
+                                    </div>
+                                <div class="leaflet-pane leaflet-shadow-pane">
+                                    <img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" alt="" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(60px, 709px, 0px);">
+                                    <img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" alt="" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(281px, 514px, 0px);">
+                                    <img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" alt="" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(-73px, 545px, 0px);">
+                                    <img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" alt="" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(-47px, 503px, 0px);">
+                                    <img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" alt="" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(370px, -188px, 0px);">
+                                    <img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" alt="" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(249px, 644px, 0px);">
+                                    <img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" alt="" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(-104px, 1054px, 0px);">
+                                    <img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" alt="" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(18px, 603px, 0px);">
+                                    <img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" alt="" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(64px, 732px, 0px);">
+                                    <img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" alt="" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(-139px, 1011px, 0px);"><img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" alt="" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(50px, 962px, 0px);"><img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" alt="" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(-22px, 581px, 0px);"><img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" alt="" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(-330px, 1275px, 0px);"><img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" alt="" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(148px, 555px, 0px);"><img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" alt="" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(510px, 531px, 0px);"><img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" alt="" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(309px, 617px, 0px);"><img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" alt="" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(43px, 404px, 0px);"><img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" alt="" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(152px, 577px, 0px);"><img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" alt="" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(111px, 450px, 0px);"><img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" alt="" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(99px, 513px, 0px);"><img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" alt="" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(-80px, 915px, 0px);"><img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" alt="" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(-525px, -211px, 0px);"><img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" alt="" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(73px, -348px, 0px);"><img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" alt="" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(-573px, -188px, 0px);"></div>
+                                <div class="leaflet-pane leaflet-overlay-pane"></div>
+                                <div class="leaflet-pane leaflet-marker-pane"><img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-icon.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt="" tabindex="0" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(60px, 709px, 0px); z-index: 709;"><img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-icon.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt="" tabindex="0" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(281px, 514px, 0px); z-index: 514;"><img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-icon.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt="" tabindex="0" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(-73px, 545px, 0px); z-index: 545;"><img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-icon.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt="" tabindex="0" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(-47px, 503px, 0px); z-index: 503;"><img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-icon.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt="" tabindex="0" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(370px, -188px, 0px); z-index: -188;"><img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-icon.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt="" tabindex="0" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(249px, 644px, 0px); z-index: 644;"><img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-icon.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt="" tabindex="0" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(-104px, 1054px, 0px); z-index: 1054;"><img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-icon.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt="" tabindex="0" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(18px, 603px, 0px); z-index: 603;"><img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-icon.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt="" tabindex="0" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(64px, 732px, 0px); z-index: 732;"><img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-icon.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt="" tabindex="0" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(-139px, 1011px, 0px); z-index: 1011;"><img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-icon.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt="" tabindex="0" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(50px, 962px, 0px); z-index: 962;"><img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-icon.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt="" tabindex="0" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(-22px, 581px, 0px); z-index: 581;"><img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-icon.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt="" tabindex="0" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(-330px, 1275px, 0px); z-index: 1275;"><img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-icon.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt="" tabindex="0" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(148px, 555px, 0px); z-index: 555;"><img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-icon.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt="" tabindex="0" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(510px, 531px, 0px); z-index: 531;"><img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-icon.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt="" tabindex="0" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(309px, 617px, 0px); z-index: 617;"><img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-icon.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt="" tabindex="0" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(43px, 404px, 0px); z-index: 404;"><img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-icon.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt="" tabindex="0" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(152px, 577px, 0px); z-index: 577;"><img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-icon.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt="" tabindex="0" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(111px, 450px, 0px); z-index: 450;"><img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-icon.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt="" tabindex="0" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(99px, 513px, 0px); z-index: 513;"><img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-icon.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt="" tabindex="0" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(-80px, 915px, 0px); z-index: 915;"><img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-icon.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt="" tabindex="0" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(-525px, -211px, 0px); z-index: -211;"><img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-icon.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt="" tabindex="0" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(73px, -348px, 0px); z-index: -348;"><img src="https://unpkg.com/leaflet@1.6.0/dist/images/marker-icon.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt="" tabindex="0" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(-573px, -188px, 0px); z-index: -188;"></div>
+                                <div class="leaflet-pane leaflet-tooltip-pane"></div>
+                                <div class="leaflet-pane leaflet-popup-pane"></div>
+                                <div class="leaflet-proxy leaflet-zoom-animated" style="transform: translate3d(776886px, 1.18979e+06px, 0px) scale(4096);"></div>
+                                </div>
+                                <div class="leaflet-control-container">
+                                <div class="leaflet-top leaflet-left">
+                                    <div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in" href="#" title="Zoom in" role="button" aria-label="Zoom in">+</a><a class="leaflet-control-zoom-out" href="#" title="Zoom out" role="button" aria-label="Zoom out">−</a></div>
+                                </div>
+                                <div class="leaflet-top leaflet-right"></div>
+                                <div class="leaflet-bottom leaflet-left"></div>
+                                <div class="leaflet-bottom leaflet-right">
+                                    <div class="leaflet-control-attribution leaflet-control"><a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> | Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a></div>
+                                </div>
+                                </div>
+                            </div>
+                            <!--end leaflet maps-->
+                        </div>
+                    </div>
                 </div>
-            </div><!--list-->
-            <br/>
-                    
-        <!--end tree cards row-->
-
+            </div>
+        </div>
+        <!--start footer-->
         <div id="footer">
             <div id="social_net">
                 <div class="net"><a href="#"><img src="./static/img/whatsapp-icon.png"/> <br/> </a></div>
@@ -254,6 +300,7 @@
                 <div class="net"><a href="https://twitter.com/toti_cavalcanti" target="_blank"><img src="./static/img/twitter-icon.png"/> <br/> </a></div>
             </div>
         </div>
+        <!--end footer-->
 
         <!-- Modal -->
         <div class="modal fade" id="elegantModalForm" tabindex="-1" role="dialog" aria-labelledby="signInLabel"
@@ -626,6 +673,9 @@
         <!-- Modal -->
         <!-- end Modal form-->
 
+        <!--maps-->
+        <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+
         <!-- Jquery JS-->
         <script src="vendor/jquery/jquery.min.js"></script>
         <!-- Vendor JS-->
@@ -670,5 +720,6 @@
         <script src="./static/js/calendar.js" ></script>
         <script src="./static/js/popup.js" ></script>
         <script src="./static/js/readJson.js" ></script>
+        <script src="./static/js/maps.js" ></script>
     </body>
 </html>
