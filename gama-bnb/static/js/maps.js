@@ -1,4 +1,4 @@
-var initialCoordinates = [-22.91, -43.20]; // Rio de Janeiro
+var initialCoordinates = [-22.9512398, -43.1752885]; // Rio de Janeiro
 var initialZoomLevel = 13;
 
 // create a map in the "map" div, set the view to a given place and zoom
@@ -10,14 +10,16 @@ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 var muxiCoordinates = [-22.903719, -43.1760605];
-var muxiMarkerMessage = "A Muxi fica aqui.<br>Olá mundo!";
+var muxiMarkerMessage = "Av. Pasteur! ;)";
+
+
 
 L.marker(muxiCoordinates).addTo(map)
     .bindPopup(muxiMarkerMessage)
     .openPopup();
 
 var muxiCoordinates = [-22.903719, -43.1760605];
-var muxiMarkerMessage = "A Muxi fica aqui.<br>Olá mundo!";
+var muxiMarkerMessage = "Av. Pasteur! ;)";
 
 var muxiIconProperties = {
   iconUrl: "./static/img/maps-marker.png"
@@ -30,5 +32,4 @@ var muxiIcon = L.icon(muxiIconProperties);
 
 L.marker(muxiCoordinates, {icon: muxiIcon})
   .addTo(map)
-  .bindPopup(muxiMarkerMessage)
-;
+  .bindPopup(muxiMarkerMessage);
