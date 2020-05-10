@@ -144,3 +144,27 @@ a.nav-link {
     margin-top: 30px;
     margin-bottom: 30px;
 }
+
+.list-properties {
+    float: right;
+}
+
+#footer {
+    margin-top: 30px;
+    background-color: #2196f3;
+}
+
+#social_net {
+display: flex;
+justify-content: space-between;
+margin-left: 20px;
+margin-top: 20px;
+color: white;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+padding-bottom: 50px;
+}
+
+.net {
+    margin-left: 80px;
+    margin-right: 90px;
+}
