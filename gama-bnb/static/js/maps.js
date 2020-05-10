@@ -3,7 +3,9 @@ var initialZoomLevel = 13;
 
 // create a map in the "map" div, set the view to a given place and zoom
 var map = L.map('map').setView(initialCoordinates, initialZoomLevel);
-
+setInterval( () => {
+  map.invalidateSize();
+}, 100);
 // add an OpenStreetMap tile layer
 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
     attribution: '&copy; Contribuidores do <a href="http://osm.org/copyright">OpenStreetMap</a>'
@@ -11,8 +13,6 @@ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
 
 var muxiCoordinates = [-22.903719, -43.1760605];
 var muxiMarkerMessage = "Av. Pasteur! ;)";
-
-
 
 L.marker(muxiCoordinates).addTo(map)
     .bindPopup(muxiMarkerMessage)
