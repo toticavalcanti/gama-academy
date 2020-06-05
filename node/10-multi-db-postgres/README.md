@@ -9,7 +9,9 @@ docker run \
 
 docker ps
 
-docker exec it postgres /bin/bash
+sudo lsof -i -P -n | grep 5432 //para saber quem tá rodando na porta 5432
+
+docker exec -it postgres /bin/bash
 
 docker run \
     --name adminer \
@@ -18,6 +20,7 @@ docker run \
     -d \
     adminer
 
+docker start 
 #--- MongoDB
 docker run \
     --name mongodb \
