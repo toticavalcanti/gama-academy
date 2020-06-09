@@ -1,4 +1,5 @@
 const ICrud = require('./interfaces/interfaceCrud')
+const Mongoose = require('mongoose')
 
 class MongoDB extends ICrud {
     constructor(){

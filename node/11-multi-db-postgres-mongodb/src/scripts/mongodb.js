@@ -1,5 +1,4 @@
-// docker exec -it 6e405d354080 \
-//     mongo -u toticavalcanti -p top-secret --authenticationDatabase herois
+const Mongoose = require('mongoose')
 
 //mostra os databases
 show dbs
