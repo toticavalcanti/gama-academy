@@ -16,7 +16,7 @@ class MongoDB extends ICrud {
     }
 
     defineModel() {
-        heroiSchema = new Mongoose.Schema({
+        const heroiSchema = new Mongoose.Schema({
             nome: {
                 type: String,
                 required: true
@@ -39,10 +39,13 @@ class MongoDB extends ICrud {
 
     async isConnected() {
         const state = STATUS[this._driver.readyState]
-        if(STATUS === 'conectado') return state;
-        if(STATUS !== 'conectando') return state;
+        if(state === 'conectado') return state;
+
+        if(state !== 'conectando') return state
+
         await new Promise(resolve => setTimeout(resolve, 1000))
-        return STATUS[connection.readyState]
+
+        return STATUS[this._driver.readyState]
     }
 
     connect() {
@@ -54,16 +57,13 @@ class MongoDB extends ICrud {
             })
 
         const connection = Mongoose.connection
-        this._driver =connection
+        this._driver = connection
         connection.once('open', () => console.log('database rodando!!!'))
+        this.defineModel()
     }
 
-    async create(item) {
-        const resultCadastrar = await model.create({
-            nome: 'Batman',
-            poder: 'dinheiro'
-        })
-        console.log('Result Cadastrar: ', resultCadastrar)
+    create(item) {
+        return this._herois.create(item)
     }
 }
 
