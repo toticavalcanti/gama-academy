@@ -1,3 +1,6 @@
+docker stop$(docker ps -aq)
+docker rm$(docker ps -aq)
+
 docker run \
     --name postgres \
     -e POSTGRES_USER=toticavalcanti \

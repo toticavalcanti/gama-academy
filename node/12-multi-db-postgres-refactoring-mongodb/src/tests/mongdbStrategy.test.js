@@ -1,6 +1,7 @@
-const MongoDB = require('./../db/strategies/mongodb')
-const Context = require('./../db/strategies/base/contextStrategy')
 const assert = require('assert')
+const MongoDB = require('./../db/strategies/mongodb/mongodb')
+const HeroiSchema = require('./../db/strategies/mongodb/schema/heroisSchema')
+const Context = require('./../db/strategies/base/contextStrategy')
 
 const MOCK_HEROI_CADASTRAR = {
     nome: 'Mulher Maravilha',
@@ -19,10 +20,12 @@ const MOCK_HEROI_ATUALIZAR= {
 
 let MOCK_HEROI_ID = ''
 
-const context = new Context(new MongoDB())
-describe('MongoDB Suite de Testes', function() {
+let context = {}
+
+describe.only('MongoDB Suite de Testes', function() {
     this.beforeAll(async () => {
-        await context.connect()
+        const connection = MongoDB.connect()
+        context = new Context(new MongoDB(connection, HeroiSchema))
         await context.create(MOCK_HEROI_DEFAULT)
         const result =await context.create(MOCK_HEROI_ATUALIZAR)
         MOCK_HEROI_ID = result._id
