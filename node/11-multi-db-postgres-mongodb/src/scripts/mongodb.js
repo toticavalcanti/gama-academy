@@ -1,5 +1,8 @@
 const Mongoose = require('mongoose')
 
+docker exec -it 5850cc7e240d \
+    mongo -u toticavalcanti -p top-secret \
+    --authenticationDatabase herois
 //mostra os databases
 show dbs
 //seleciona o database herois
