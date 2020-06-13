@@ -1,6 +1,10 @@
 const BaseRoute = require('./base/baseRoute')
 const Joi = require('joi')
 
+const failAction = (request, headers, erro) =>{
+    throw erro;
+}
+
 class HeroRoutes extends BaseRoute {
     constructor(db) {
         super()
@@ -17,9 +21,7 @@ class HeroRoutes extends BaseRoute {
                     // headers -> header
                     // params -> na URL :id
                     // query -> ?skip=0&limit=10
-                    failAction: (request, headers, erro) =>{
-                        throw erro;
-                    },
+                    failAction: failAction,
                     query: {
                         skip: Joi.number().integer().default(0),
                         limit: Joi.number().integer().default(10),
@@ -51,13 +53,33 @@ class HeroRoutes extends BaseRoute {
     }
 
     create() {
-        return {
-            path: '/herois',
-            method: 'POST',
-            handler: (request, headers) => {
-                return this.db.read()
-            }
-        }
+       return {
+           path: '/herois',
+           method: 'POST',
+           config: {
+               validate: {
+                   failAction: failAction,
+                   payload: {
+                       nome: Joi.string().required().min(3).max(100),
+                       poder: Joi.string().required().min(2).max(100)
+                   }
+               },
+               handler: async (request) => {
+                   try {
+                       const { nome, poder } = request.payload
+                       const result = await this.db.create({ nome, poder })
+                       console.log('result', result)
+                       return {
+                           message: 'Heroi cadastrado com sucesso!',
+                           _id: result._id
+                       }
+                   } catch (error) {
+                       console.log('Deu ruim!!!', error)
+                       return 'Internal Error!'
+                   }
+               }
+           }
+       }
     }
 
 }
