@@ -1,8 +1,8 @@
- const assert = require('assert')
- const api = require('./../api')
+const assert = require('assert')
+const api = require('./../api')
 
- describe('Suite de testes da API Heroes', function() {
-    this.beforeAll( async () => {
+describe('Suite de testes da API Heroes', function () {
+    this.beforeAll(async () => {
         app = await api
     })
 
@@ -37,8 +37,17 @@
             method: 'GET',
             url: `/herois?skip=0&limit=${TAMANHO_LIMIT}`
         })
-
-        assert.deepEqual(result.payload, "Erro interno no servidor")
+        const erroResult = {
+            "statusCode": 400,
+            "error": "Bad Request", 
+            "message": "child \"limit\" fails because [\"limit\" must be a number]", 
+            "validation": { 
+                "source": "query", 
+                "keys": ["limit"] 
+            }
+        }
+        assert.deepEqual(result.statusCode, 400)
+        assert.deepEqual(result.payload, JSON.stringify(erroResult))
     })
 
     it('listar /herois - deve filtrar um item', async () => {
@@ -53,4 +62,4 @@
         assert.deepEqual(statusCode, 200)
         assert.ok(dados[0].nome === NAME)
     })
- })
+})

@@ -35,7 +35,12 @@ class HeroRoutes extends BaseRoute {
                         nome 
                     } = request.query
 
-                    return this.db.read(query, parseInt(skip), parseInt(limit))
+                    const query = {
+                        nome: {
+                            $regex: `.*${nome}*.`
+                        }
+                    }
+                    return this.db.read(nome ? query : {}, skip, limit)
                 } catch
                 (error) {
                     console.log('DEU RUIM!!!', error)
