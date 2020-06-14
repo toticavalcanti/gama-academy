@@ -19,13 +19,13 @@ class Postgres extends ICrud {
         }
     }
     
-    static async defineModel(connection, schema){
+    static async defineModel(connection, schema) {
         const model = connection.define(
-            schema.name, schema.schema, schema.options
+          schema.name, schema.schema, schema.options
         )
         await model.sync()
-        return model;
-    }
+        return model
+      }
     
     async create(item){
         const {
@@ -34,8 +34,11 @@ class Postgres extends ICrud {
         return dataValues;
     }
 
-    async update(id, item){
-        return this._schema.update(item, {where: {id: id}})
+    async update(id, item, upsert = false){
+        const fn = upsert ? 'upsert' : 'update'
+        return this._schema[fn](item, {
+            where: {id: id}
+        })
     }
 
     async read(item = {}){
