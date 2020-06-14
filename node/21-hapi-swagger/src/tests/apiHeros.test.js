@@ -70,7 +70,7 @@ describe('Suite de testes da API Heroes', function () {
 
     it('listar GET - /herois - deve filtrar um item', async () => {
         const TAMANHO_LIMIT = 100
-        const NAME = 'Homem Aranha1591807599325'
+        const NAME = MOCK_HEROI_INICIAL.nome
         const result = await app.inject({
             method: 'GET',
             url: `/herois?skip=0&limit=${TAMANHO_LIMIT}&nome=${NAME}`
