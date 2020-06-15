@@ -2,8 +2,8 @@ const Sequelize = require('sequelize')
 
 const UsuarioSchema = {
     name: 'usuarios',
-    schema: 
-    {
+    schema: {
+         
         id: {
             type: Sequelize.INTEGER,
             required: true,
@@ -13,12 +13,12 @@ const UsuarioSchema = {
         username:{
             type: Sequelize.STRING,
             unique: true,
-            required: true,
+            required: true
     
         },
         password:{
             type: Sequelize.STRING,
-            required: true,
+            required: true
             
         }
     },

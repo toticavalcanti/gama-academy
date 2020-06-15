@@ -13,11 +13,11 @@ const USER = {
 
 const USER_DB = {
     username: USER.username.toLowerCase(),
-    password: '$2b$04$QlYeSSMsYhlz2Scs.JKADOmI0LSTjMwtkd9rKlepdRJKsakLY.A66'
+    password: '$2b$04$XwZIK0IFNqhkQQY4BuE8oOnTVlJ7L/6T93GjbpU4lDVDbDR1tS7sq'
 }
 
 describe('Auth test suite', function () {
-    this.beforeAll( async () => {
+    before( async () => {
         app = await api
 
         const connectionPostgres = await PostGres.connect()
@@ -32,6 +32,7 @@ describe('Auth test suite', function () {
             url: '/login',
             payload: USER
         })
+        console.log('result', result.payload)
         const statusCode = result.statusCode
         const dados = JSON.parse(result.payload)
         assert.deepEqual(statusCode, 200)

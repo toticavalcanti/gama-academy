@@ -1,8 +1,8 @@
 // npm i hapi
 // npm i vision inert hapi-swagger
 // npm i hapi-auth-jwt2
-// npm i bcrypt não funcionou, dá erro
-// npm i bcryptjs --save
+
+// npm i bcrypt
 
 const Hapi = require('hapi')
 const Context = require('./db/strategies/base/contextStrategy')
@@ -32,9 +32,9 @@ async function main() {
     const connection = MongoDb.connect()
     const context = new Context(new MongoDb(connection, HeroiSchema))
 
-    const connectionPostgres = Postgres.connect()
-    const usuarioSchema = await Postgres.defineModel(connectionPostgres, UsuarioSchema)
-    const contextPostgres = new Context(new Postgres(connectionPostgres, usuarioSchema))
+    const connectionPostgres = await Postgres.connect()
+    const model = await Postgres.defineModel(connectionPostgres, UsuarioSchema)
+    const contextPostgres = new Context(new Postgres(connectionPostgres, model))
 
     const swaggerOtpions = {
         info:{
