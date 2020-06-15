@@ -1,5 +1,8 @@
 const assert = require('assert')
 const api = require('../api')
+const Context = require('./../db/strategies/base/contextStrategy')
+const PostGres = require('./../db/strategies/postgres/postgres')
+const UsuarioSchema = require('./../db/strategies/postgres/schemas/usuarioSchema')
 let app = {}
 
 describe('Auth test suite', function () {
