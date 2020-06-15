@@ -38,4 +38,19 @@ describe('Auth test suite', function () {
         assert.deepEqual(statusCode, 200)
         assert.ok(dados.token.length > 10)
     })
+
+    it('deve retornar não autorizado ao tentar obter um token com login errado', async () => {
+        const result = await app.inject({
+            method: 'POST',
+            url: '/login',
+            payload: {
+                username: 'toticavalcanti',
+                password: '123'
+            }
+        });
+        const statusCode = result.statusCode
+
+        assert.deepEqual(statusCode, 401)
+        assert.deepEqual(JSON.parse(result.payload).error, "Unauthorized")
+    })
 })
