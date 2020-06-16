@@ -3,7 +3,7 @@ const Joi = require('joi')
 const Boom = require('boom')
 const PasswordHelper = require('./../helpers/passwordHelper')
 const USER = {
-    username: 'Olívia Palito',
+    username: 'xuxadasilva',
     password: '123'
 }
 const Jwt = require('jsonwebtoken')
