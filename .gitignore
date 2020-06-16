@@ -1,3 +1,7 @@
 *.pdf
 git/*
+<<<<<<< HEAD
 10-prova-node/*
+=======
+node_modules/
+>>>>>>> 5a94eb2cf4c5a6872e4993a713ef2aafb122fd41
