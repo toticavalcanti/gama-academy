@@ -1,3 +1,4 @@
+// herança
 class Car {
 
     private currenSpeed: number = 0;
@@ -29,5 +30,18 @@ class Car {
     }
 }
 
-const carro = new Car('Chevrolet', 'Agile', 180);
-//carro.currenSpeed = 190;
+class Camaro extends Car {
+    private turbo = false;
+    constructor(){
+        super('chevrolet', 'camaro', 270)
+    }
+
+    turboOnOff(){
+        this.turbo = true
+    }
+}
+
+const camaro = new Camaro();
+camaro.speedUp()
+camaro.braking()
+camaro.turboOnOff()
