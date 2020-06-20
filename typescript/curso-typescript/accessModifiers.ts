@@ -8,18 +8,22 @@ class Car {
         private maxSpeed: number = 200
     ){ }
 
-    speedUp(){
-        const speedUp = 5;
-        if(this.currenSpeed + speedUp <=  this.maxSpeed){
-            this.currenSpeed += speedUp;
+    private speedHandler(delta: number){
+        if(this.currenSpeed + delta <=  this.maxSpeed){
+            this.currenSpeed += delta;
+        }
+        else if(this.currenSpeed - delta >=  0){
+            this.currenSpeed -= delta;
         }
     }
 
+    speedUp(){
+        this.speedHandler(5);
+        
+    }
+
     braking(){
-        const brake = 5;
-        if(this.currenSpeed - brake >=  0){
-            this.currenSpeed -= brake;
-        }
+        this.speedHandler(-5);
     }
 }
 
