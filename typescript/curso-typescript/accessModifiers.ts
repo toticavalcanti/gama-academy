@@ -9,11 +9,13 @@ class Car {
     ){ }
 
     private speedHandler(delta: number){
-        if(this.currenSpeed + delta <=  this.maxSpeed){
-            this.currenSpeed += delta;
+        const newSpeed = this.currenSpeed + delta;
+
+        if(newSpeed >= 0 && newSpeed <= this.maxSpeed){
+            this.currenSpeed += newSpeed;
         }
         else if(this.currenSpeed - delta >=  0){
-            this.currenSpeed -= delta;
+            this.currenSpeed = delta > 0 ? this.maxSpeed : 0
         }
     }
 
