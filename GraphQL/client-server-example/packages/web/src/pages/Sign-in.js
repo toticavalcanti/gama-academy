@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign-in - Client/Server</title>
-</head>
-<body>
-  <form action="/authenticate" method="POST">
+import React from 'react';
+
+export default function SignIn() {
+  return (
+    <form action="/authenticate" method="POST">
     <fieldset>
       <label for="email">E-mail</label>
       <input id="email" name="email" type="email" inputmode="email" autocomplete="username" />
@@ -17,5 +13,5 @@
     </fieldset>
     <button type="submit">Enter</button>
   </form>
-</body>
-</html>
+  );
+}
