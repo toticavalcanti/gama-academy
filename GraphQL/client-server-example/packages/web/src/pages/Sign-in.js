@@ -6,10 +6,10 @@ export default function SignIn() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    fetch('https://127.0.0.1:8000/authenticate', {
+    fetch('http://127.0.0.1:8000/authenticate', {
       method: 'POST',
       headers: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
       },
       body: JSON.stringify({
         email,
@@ -17,8 +17,8 @@ export default function SignIn() {
       }),
     })
       .then((response) => response.json())
-      .then(() => {
-        console.log('Sucess!');
+      .then((data) => {
+        console.log('Sucess!', data);
       })
   };
 

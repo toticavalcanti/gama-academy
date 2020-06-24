@@ -1,6 +1,9 @@
 import express from 'express';
+import cors from 'cors';
 
 const server = express();
+
+
 
 server.get('/status', (_, response) => {
   response.send({
@@ -8,12 +11,15 @@ server.get('/status', (_, response) => {
   });
 });
 
-server.post('/authenticate', express.json(), (request, response) => {
-  console.log(
-    'Email: ', request.body.email,  
-    'Password: ', request.body.password,  
-  );
-  response.send();
+const enableCors = cors ({ origin: 'http://localhost:3000' });
+
+server
+  .options('/authenticate', enableCors)
+  .post('/authenticate', enableCors, express.json(), (request, response) => {
+  console.log('Email: ', request.body.email, 'Password: ', request.body.password);
+  response.send({
+    Okay: true, 
+  });
 });
 
 const PORT = process.env.PORT ? parseInt(process.env.PORT) : 8000;
