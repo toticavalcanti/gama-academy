@@ -20,7 +20,7 @@ const server = createServer((request, response) => {
     }
 
     case '/sign-in': {
-      const path = resolve(__dirname, './pages/sign-in.html');
+      const path = resolve(__dirname, '../../web/sign-in.html');
       readFile(path, (error, file) => {
         if (error) {
           response.writeHead(500, 'Cannot process HTML file.');

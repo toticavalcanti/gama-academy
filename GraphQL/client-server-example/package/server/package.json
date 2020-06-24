@@ -1,5 +1,5 @@
 {
-  "name": "client-server-example",
+  "name": "@dev-demands/server",
   "version": "1.0.0",
   "private": true,
   "main": "src/main.js",
