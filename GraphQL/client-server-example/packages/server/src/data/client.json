@@ -598,5 +598,11 @@
     "name": "Rhiamon Pyrke",
     "email": "rpyrke2r@meetup.com",
     "disabled": true
+  },
+  {
+    "id": "37b2bc68-bb35-43b4-ae20-b51aba508cac",
+    "name": "Toti Cavalcanti",
+    "email": "toti@mail.com",
+    "disabled": false
   }
 ]
