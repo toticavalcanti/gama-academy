@@ -50,7 +50,7 @@ let sentence02: string = "Hello, my name is " + fullName + ".\n\n" + "I'll be " 
  * */
 let list: number[] = [1, 2, 3];
 //The second way uses a generic array type, Array<elemType>:
-let list: Array<number> = [1, 2, 3];
+let list2: Array<number> = [1, 2, 3];
 
 
 //###################################################
