@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { ClientList } from '../Components/ClientList';
 
 export default function Home() {
-  return <h1>Home</h1>;
+  const [clientId, setClientId] = useState(null);
+
+  return (
+    <main>
+      <ClientList onSelectClient={setClientId} />
+    </main>
+  );
 }
-    
