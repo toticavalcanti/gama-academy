@@ -8,7 +8,7 @@ import client from './plugins/apollo/client';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ApolloProvider client={ client }>
+    <ApolloProvider client={client}>
       <BrowserRouter>
         <App />
       </BrowserRouter>
@@ -16,4 +16,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-
