@@ -1,3 +1,5 @@
+
+
 /**
  * 1o Add procfile
  * 2o up to heroku
@@ -33,7 +35,7 @@ config({
     path: configPath
 })
 
-
+console.log('MONGO', process.env.MONGO_URL)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
 const Hapi = require('hapi')
 const Context = require('./src/db/strategies/base/contextStrategy')
 const MongoDB = require('./src/db/strategies/mongodb/mongoDbStrategy')
