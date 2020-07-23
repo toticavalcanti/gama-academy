@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "tdd": "jasmine",
+    "bdd": "./node_modules/cucumber/bin/cucumber-js features/*.feature"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -14,6 +16,8 @@
     "morgan": "~1.9.1"
   },
   "devDependencies": {
-    "jasmine": "^3.5.0"
+    "cucumber": "^6.0.5",
+    "jasmine": "^3.5.0",
+    "selenium-webdriver": "^4.0.0-alpha.7"
   }
 }
